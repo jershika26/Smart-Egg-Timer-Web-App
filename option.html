@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose Your Egg</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="content">
+      <h2>🥚 How do you want your eggs? 🥚</h2>
+      <div class="options">
+
+        <div class="egg-card">
+          <a href="timer.html?type=soft" onclick="unlockSound()">
+            <img src="soft.png" alt="Soft Egg">
+            <p>Soft</p>
+          </a>
+        </div>
+
+        <div class="egg-card">
+          <a href="timer.html?type=medium" onclick="unlockSound()">
+            <img src="medium.png" alt="Medium Egg">
+            <p>Medium</p>
+          </a>
+        </div>
+
+        <div class="egg-card">
+          <a href="timer.html?type=hard" onclick="unlockSound()">
+            <img src="hard.png" alt="Hard Egg">
+            <p>Hard</p>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Preload alarm sound -->
+  <audio id="alarmSound" loop>
+    <source src="alarm-327234.mp3">
+  </audio>
+
+  <script>
+    function unlockSound() {
+      const sound = document.getElementById("alaram sound");
+      // Play & pause quickly to unlock audio permission
+      sound.play().then(() => {
+        sound.pause();
+        sound.currentTime = 0;
+      });
+    }
+  </script>
+</body>
+</html>
